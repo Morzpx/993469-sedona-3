@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Роман Морозов](https://up.htmlacademy.ru/htmlcss-individual/3/user/993469).
-* Наставник: `Неизвестно`.
+* Наставник: [Оксана Вайнруб](https://htmlacademy.ru/profile/id166797).
 
 ---
 
