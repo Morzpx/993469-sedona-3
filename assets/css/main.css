@@ -74,20 +74,23 @@
             & .top-menu__action-favorite {
                 position: relative;
                 .favorite-count {
+                    --size: 20px;
+                    --font-ratio: 1.6667;
                     --position: -10px;
                     position: absolute;
                     top: var(--position);
                     right: var(--position);
                     display: flex;
                     justify-content: center;
-                    align-content: center;
+                    align-items: center;
+                    width: var(--size);
+                    height: var(--size);
                     color: #ffffff;
                     background: #7DB54F;
                     border-radius: 100%;
-                    font-size: 12px;
+                    font-size: calc(var(--size) / var(--font-ratio));
                     line-height: 10px;
                     font-weight: 400;
-                    padding: 4px;
                 }
                 & .icon {
                     cursor: pointer;
