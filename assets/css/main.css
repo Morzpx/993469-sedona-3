@@ -387,10 +387,17 @@
         gap: 24px;
         align-items: center;
         .socials__link {
+            --icon-color: #83B3D3;
             text-decoration: none;
             .icon {
                 --icon-size: 17px;
-                fill: #83B3D3;
+                fill: var(--icon-color);
+            }
+            &:is(:hover) {
+                .icon{
+                    fill: color-mix(in srgb, var(--icon-color) 90%, #000);
+                }
+
             }
         }
     }
