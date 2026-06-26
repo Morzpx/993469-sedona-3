@@ -12,7 +12,7 @@
     display: flex;
     gap: 46px;
     padding: 0 70px;
-    height: 64px;
+    min-height: 64px;
     position: relative;
     z-index: 50;
     & .top-menu__logo {
@@ -26,6 +26,7 @@
         display: flex;
         align-items: center;
         gap: 32px;
+        flex-wrap: wrap;
         & .menu__list-item {
             font-size: 20px;
             line-height: 24px;
@@ -123,8 +124,9 @@
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
-        height: 485px;
+        min-height: 485px;
         position: relative;
+        background-color: #322b46;
 
         & img {
             position: absolute;
@@ -211,6 +213,7 @@
                 padding: 112px 85px;
                 background: #F0F5F9;
                 text-align: center;
+                &:nth-child(odd) {  background: #E6F0F6;}
                 .title {
                     text-transform: uppercase;
                     max-width: 175px;
@@ -230,7 +233,7 @@
                     font-weight: 400;
                 }
                 &.dark-color {
-                    background: #E6F0F6;
+
                 }
             }
         }
@@ -265,11 +268,13 @@
             padding: 81px 85px;
             background: rgba(131, 179, 211, 0.12);
             text-align: center;
+            &:nth-child(even) {background: #ffffff;}
             .title {
                 text-transform: uppercase;
             }
             .icon {
                 --icon-size: 70px;
+                fill: #83B3D3;
             }
             & .text {
                 color: #333333;
@@ -277,9 +282,9 @@
                 line-height: 21px;
                 font-weight: 400;
             }
-            &.light-color {
-                background: #ffffff;
-            }
+            /*&.light-color {*/
+            /*    background: #ffffff;*/
+            /*}*/
         }
     }
     .callback-container {
@@ -311,13 +316,16 @@
     .callback-form__container {
         position: relative;
         padding: 96px 0;
+        background-image: url(../images/subscribe.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
         & .callback-form__bg {
-            position: absolute;
-            background-image: url(../images/subscribe.jpg);
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 100%;
-            top: 0;
+            /*position: absolute;*/
+            /*background-image: url(../images/subscribe.jpg);*/
+            /*background-repeat: no-repeat;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+            /*top: 0;*/
         }
         & .p__heading {
             position: relative;
@@ -402,15 +410,30 @@
             }
         }
     }
-    & .phone {
-        text-decoration: none;
-        text-align: center;
-        font-size: 40px;
-        line-height: 1em;
-        font-weight: 400;
-        color: #000000;
+    & .phone__box {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .phone {
+            text-decoration: none;
+            text-align: center;
+            font-size: 40px;
+            line-height: 1em;
+            font-weight: 400;
+            color: #000000;
+        }
     }
+
     & .logo-htmlAcademy {
         text-decoration: none;
+
+        img {
+            transition: 200ms;
+        }
+        &:is(:hover) {
+            img {
+                filter: drop-shadow(2px 5px 5px #6a6666);
+            }
+        }
     }
 }
