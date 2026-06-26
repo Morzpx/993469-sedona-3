@@ -164,6 +164,7 @@
     & .preview__box {
         & .features {
             display: flex;
+            overflow: hidden;
             &.reversed {
                 flex-direction: row-reverse;
             }
@@ -173,6 +174,9 @@
                 align-content: center;
                 width: 100%;
                 background: #82B3D3;
+                &:has(.text) {
+                    position: relative;
+                }
                 & .features-item__content {
                     display: flex;
                     flex-direction: column;
