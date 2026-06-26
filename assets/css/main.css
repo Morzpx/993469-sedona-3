@@ -389,6 +389,7 @@
         .socials__link {
             --icon-color: #83B3D3;
             text-decoration: none;
+            transition: 200ms;
             .icon {
                 --icon-size: 17px;
                 fill: var(--icon-color);
