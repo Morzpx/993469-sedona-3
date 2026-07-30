@@ -220,7 +220,8 @@
         }
 
         &[type="radio"]:checked {
-            background-image: radial-gradient(#3f5e72 0 5px, transparent 5px);
+            /* 0.5px на растушёвку края, иначе точка пикселит */
+            background-image: radial-gradient(circle, #3f5e72 4.5px, transparent 6px);
         }
 
         &:is(:hover) {
