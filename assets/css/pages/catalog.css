@@ -28,8 +28,6 @@
                     transition: 200ms;
                     .icon {
                         --icon-size: 12px;
-                        width: var(--icon-size);
-                        height: var(--icon-size);
                         fill: #ffffff;
                     }
                     &:is(:hover) {
