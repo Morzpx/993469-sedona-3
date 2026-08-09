@@ -97,3 +97,29 @@ h4, .h4 {
         pointer-events: none;
     }
 }
+.action-button {
+    --icon-color: #000000;
+    --icon-color-hover: #756157;
+    --icon-color-focus: #756157;
+    --icon-color-active: rgba(117, 97, 87, 0.3);
+    cursor: pointer;
+
+    & .icon {
+        fill: var(--icon-color);
+        transition: fill 200ms;
+    }
+    &:hover {
+        --icon-color: var(--icon-color-hover);
+    }
+    &:focus-within {
+        --icon-color: var(--icon-color-focus);
+    }
+    &:active {
+        --icon-color: var(--icon-color-active);
+    }
+    &[disabled],
+    &.is-disabled {
+        --icon-color: #E5E5E5;
+        pointer-events: none;
+    }
+}

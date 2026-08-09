@@ -116,30 +116,45 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
+    max-width: 160px;
 
     & .view-modes__link {
         --size: 48px;
+        --border-color: #e5e5e5;
+        --border-color-hover: #83b3d3;
+        --border-color-focus: #68a2ca;
+        --border-color-active: #000000;
         display: flex;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
         width: var(--size);
         height: var(--size);
-        border: 2px solid #e5e5e5;
+        border: 2px solid var(--border-color);
         border-radius: 4px;
-        transition: 200ms;
+        transition: border-color 200ms;
 
         & .icon {
             --icon-size: 16px;
             fill: #000000;
         }
 
-        &:is(:hover) {
-            border-color: #83b3d3;
+        &:hover {
+            --border-color: var(--border-color-hover);
+        }
+
+        &:focus-visible {
+            --border-color: var(--border-color-focus);
+            outline: none;
+        }
+
+        &:active {
+            --border-color: var(--border-color-active);
         }
 
         &.is-active {
-            border-color: #000000;
+            --border-color: #000000;
         }
     }
 }
@@ -248,26 +263,35 @@
     gap: 2px;
 
     & .price__field {
-        position: relative;
+        box-sizing: border-box;
         display: flex;
+        align-items: center;
         width: 143px;
+        padding-right: 20px;
+        background: #f2f2f2;
+        cursor: text;
+        transition: 200ms;
 
-        &:first-child .price__input {
+        &:first-child {
             border-radius: 4px 0 0 4px;
         }
 
-        &:last-child .price__input {
+        &:last-child {
             border-radius: 0 4px 4px 0;
+        }
+
+        &:is(:hover) {
+            background: #e6e6e6;
         }
     }
 
     & .price__input {
         appearance: textfield;
         box-sizing: border-box;
-        width: 100%;
+        flex: 1;
         min-width: 0;
-        padding: 12px 40px 12px 18px;
-        background: #f2f2f2;
+        padding: 12px 6px 12px 18px;
+        background: transparent;
         border: none;
         outline: none;
         font-family: inherit;
@@ -275,16 +299,11 @@
         line-height: 24px;
         font-weight: bold;
         color: #000000;
-        transition: 200ms;
 
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
             appearance: none;
             margin: 0;
-        }
-
-        &:is(:hover) {
-            background: #e6e6e6;
         }
 
         &:is(:focus-visible) {
@@ -293,10 +312,7 @@
     }
 
     & .price__unit {
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
+        flex-shrink: 0;
         font-size: 18px;
         line-height: 24px;
         font-weight: 400;
@@ -327,6 +343,10 @@
     }
 
     & .range__toggle {
+        --left-box: 2px;
+        --box-shadow: 0 2px 0 #00000078;
+        --box-shadow-toggle-l: var(--left-box) var(--box-shadow);
+        --box-shadow-toggle-r: calc(-1 * var(--left-box)) var(--box-shadow);
         --size: 20px;
         position: absolute;
         top: 0;
@@ -352,11 +372,13 @@
 
     & .range__toggle--min {
         left: 0;
+        box-shadow: var(--box-shadow-toggle-l);
     }
 
     & .range__toggle--max {
         left: 72%;
         transform: translateX(-100%);
+        box-shadow: var(--box-shadow-toggle-r);
     }
 }
 
