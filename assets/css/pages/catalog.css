@@ -380,15 +380,7 @@
     justify-content: center;
     transition: 200ms;
     width: 100%;
-    &:is(:hover) {
-        background: transparent;
-        color: #ffffff;
-    }
-
-    &:is(:active) {
-        background: transparent;
-        color: rgba(255, 255, 255, 0.3);
-    }
+    color: #ffffff;
 }
 
 .catalog__grid {

@@ -12,11 +12,10 @@
     display: flex;
     gap: 46px;
     padding: 0 70px;
-    height: 64px;
     position: relative;
     z-index: 50;
     & .top-menu__logo {
-
+        margin-bottom: -10px;
         & img {
             width: 140px;
             height: 70px;
@@ -99,22 +98,9 @@
             }
         }
 
+        /* внешний вид — в .button (base/layout.css), здесь только раскладка */
         & .top-menu__action-button {
-            --bg: #756157;
-            background: var(--bg);
-            display: inline-flex;
-            align-items: center;
-            color: #fff;
-            border-radius: 4px;
-            padding: 8px 34px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 200ms;
-            text-decoration: none;
-            font-weight: bold;
-            &:hover {
-                background: color-mix(in srgb, var(--bg) 90%, #000);
-            }
+            max-width: 160px;
         }
     }
 }
