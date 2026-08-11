@@ -61,7 +61,7 @@
     & .top-menu__action {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 30px;
         margin-left: auto;
         & .icon {
             --icon-size: 18px;
@@ -106,7 +106,7 @@
 
 .callback-form__container {
     position: relative;
-    padding: 96px 0;
+    padding: 103px 0;
     background-image: url(../images/subscribe.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -180,7 +180,7 @@
 }
 
 .footer {
-    padding: 45px 70px;
+    padding: 45px 70px 45px 85px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
@@ -194,7 +194,7 @@
             text-decoration: none;
             transition: 200ms;
             .icon {
-                --icon-size: 17px;
+                --icon-size: 21px;
                 fill: var(--icon-color);
             }
             &:is(:hover) {

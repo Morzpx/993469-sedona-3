@@ -189,7 +189,7 @@
 
     & .filter__title {
         padding: 0;
-        margin-bottom: 32px;
+        margin-bottom: 26px;
         font-size: 20px;
         line-height: 24px;
         font-weight: bold;
@@ -212,7 +212,7 @@
         flex: 0 0 auto;
         max-width: 191px;
         margin-left: auto;
-        padding-top: 56px;
+        padding-top: 51px;
     }
 }
 
@@ -337,7 +337,7 @@
 
 .range {
     position: relative;
-    margin-top: 44px;
+    margin-top: 36px;
     height: 20px;
 
     & .range__scale {
@@ -544,7 +544,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    padding-top: 40px;
+    padding-top: 35px;
     border-top: 1px solid #e6e6e6;
 
     & .pagination__link {
@@ -564,7 +564,9 @@
         color: #ffffff;
         text-decoration: none;
         transition: 200ms;
-
+        &:nth-last-child(1) {
+            margin-left: 7px;
+        }
         &:is(:hover) {
             background: #68a2ca;
         }
@@ -590,5 +592,6 @@
         line-height: 24px;
         font-weight: bold;
         color: #000000;
+        margin-left: 10px;
     }
 }
