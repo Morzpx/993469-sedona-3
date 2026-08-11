@@ -68,6 +68,11 @@ h4, .h4 {
     background: var(--bg);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 0;
+    text-align: center;
+    overflow-wrap: anywhere;
     color: #fff;
     border-radius: 4px;
     padding: var(--padding);
@@ -97,6 +102,92 @@ h4, .h4 {
         pointer-events: none;
     }
 }
+.tooltip {
+    --tooltip-bg: #333333;
+    --tooltip-width: 256px;
+    --tooltip-offset: 15px;
+    --tooltip-arrow: 9px;
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.tooltip__toggle {
+    --size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: var(--size);
+    height: var(--size);
+    padding: 0;
+    background: #83b3d3;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 200ms;
+
+    & .icon {
+        --icon-size: 4px;
+        height: 12px;
+        fill: #ffffff;
+    }
+
+    &:is(:hover) {
+        background: #68a2ca;
+    }
+
+    &:is(:focus-visible) {
+        outline: 3px solid #83b3d3;
+        outline-offset: 2px;
+    }
+}
+
+.tooltip__text {
+    position: absolute;
+    top: calc(100% + var(--tooltip-offset));
+    left: 50%;
+    z-index: 20;
+    box-sizing: border-box;
+    width: var(--tooltip-width);
+    /* тултип не должен вылезать за узкий экран */
+    max-width: calc(100vw - 40px);
+    margin: 0;
+    padding: 20px 18px;
+    background: var(--tooltip-bg);
+    border-radius: 10px;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -8px);
+    transition: opacity 300ms ease, transform 300ms ease, visibility 300ms;
+
+    /* уголок-указатель */
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        border: var(--tooltip-arrow) solid transparent;
+        border-top: none;
+        border-bottom-color: var(--tooltip-bg);
+        transform: translateX(-50%);
+    }
+}
+
+.tooltip:hover .tooltip__text,
+.tooltip:focus-within .tooltip__text {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
 .action-button {
     --icon-color: #000000;
     --icon-color-hover: #756157;

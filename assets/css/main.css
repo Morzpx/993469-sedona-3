@@ -1,5 +1,6 @@
 @import "base/layout.css";
 @import "fonts/font.css";
+@import "components/modal.css";
 
 .global-wrapper {
     max-width: 1200px;
@@ -35,23 +36,24 @@
             color: #000;
             text-decoration: none;
             position: relative;
-            /* линия прижата к низу шапки */
             &::after {
+                --active-line: #adafa7;
                 content: '';
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 width: 100%;
                 height: 2px;
-                background: #756157;
+                background: var(--active-line);
                 transform: scaleX(0);
                 transform-origin: center;
-                transition: transform 400ms ease;
+                transition: transform 400ms ease, background-color 400ms ease;
             }
             &:hover::after {
                 transform: scaleX(1);
             }
             &.is-active::after {
+                --active-line: #756157;
                 transform: scaleX(1);
             }
         }
@@ -96,7 +98,6 @@
             }
         }
 
-        /* внешний вид — в .button (base/layout.css), здесь только раскладка */
         & .top-menu__action-button {
             max-width: 160px;
         }
