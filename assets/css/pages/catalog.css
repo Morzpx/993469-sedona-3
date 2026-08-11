@@ -287,6 +287,11 @@
         cursor: text;
         transition: 200ms;
 
+        &:is(:focus-visible) {
+            outline: 3px solid #83b3d3;
+            outline-offset: -3px;
+        }
+
         &:first-child {
             border-radius: 4px 0 0 4px;
         }
