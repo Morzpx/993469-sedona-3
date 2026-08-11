@@ -4,14 +4,13 @@
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
-        min-height: 485px;
         position: relative;
         background-color: #322b46;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-
+        padding: 62px 0;
         & .image__box {
             position: absolute;
             top: 50%;
@@ -19,8 +18,10 @@
             transform: translate(-50%, -55%);
         }
         & img {
-           position: relative;
-            top: -25px;
+            &:not(:last-child) {
+                margin-top: -15px;
+                margin-bottom: 20px;
+            }
         }
         & .main-picture__texture {
             position: absolute;
@@ -28,7 +29,7 @@
             width: 100%;
             height: 57px;
             & img {
-                margin-top: -3px;
+                /* margin-top: -3px; */
             }
         }
     }

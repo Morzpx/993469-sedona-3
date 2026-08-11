@@ -201,7 +201,11 @@
                 .icon{
                     fill: color-mix(in srgb, var(--icon-color) 90%, #000);
                 }
-
+            }
+            &:is(:active) {
+                .icon{
+                    fill: color-mix(in srgb, var(--icon-color) 80%, #000);
+                }
             }
         }
     }
