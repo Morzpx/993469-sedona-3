@@ -33,27 +33,26 @@
             }
         }
     }
-    & .first-screen__content {
-        padding: 78px 0;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        .title {
-            max-width: 620px;
-            margin: 0 auto 25px;
-            text-align: center;
-            text-transform: uppercase;
-        }
-        .sub {
-            max-width: 651px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 22px;
-            line-height: 26px;
-            font-weight: 400;
-        }
+}
+.first-screen__content {
+    padding: 78px 0;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    .title {
+        max-width: 620px;
+        margin: 0 auto 25px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .sub {
+        max-width: 651px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: 400;
     }
 }
-
 .source-landing {
     & .preview__box {
         & .features {
