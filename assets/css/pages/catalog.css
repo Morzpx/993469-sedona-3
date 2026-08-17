@@ -66,7 +66,7 @@
 .catalog__sorting {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     gap: 70px;
     padding-bottom: 40px;
 
@@ -392,13 +392,18 @@
 
     & .range__toggle--min {
         left: 0;
-        box-shadow: var(--box-shadow-toggle-l);
+        &:is(:hover) {
+            box-shadow: var(--box-shadow-toggle-l);
+        }
+
     }
 
     & .range__toggle--max {
         left: 79%;
         transform: translateX(-100%);
-        box-shadow: var(--box-shadow-toggle-r);
+        &:is(:hover) {
+            box-shadow: var(--box-shadow-toggle-r);
+        }
     }
 }
 

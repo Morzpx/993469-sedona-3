@@ -25,7 +25,7 @@
     & .menu__list {
         display: flex;
         align-items: stretch;
-        gap: 32px;
+        gap: 15px 32px;
         flex-wrap: wrap;
         & .menu__list-item {
             display: flex;
@@ -36,6 +36,12 @@
             color: #000;
             text-decoration: none;
             position: relative;
+            &:is(:active) {
+                color: #0000007d;
+            }
+            &:is(:focus-visible) {
+                color: #8098a7;
+            }
             &::after {
                 --active-line: #adafa7;
                 content: '';
@@ -63,6 +69,7 @@
         align-items: center;
         gap: 30px;
         margin-left: auto;
+        min-width: 252px;
         & .icon {
             --icon-size: 18px;
         }
@@ -191,8 +198,10 @@
     gap: 41px;
     & .socials {
         display: flex;
-        gap: 24px;
+        gap: 0 24px;
         align-items: center;
+        max-width: 120px;
+        flex-wrap: wrap;
         .socials__link {
             --icon-color: #83B3D3;
             text-decoration: none;

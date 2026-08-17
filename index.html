@@ -85,7 +85,7 @@
                     </div>
                     <div class="features-item">
                         <img src="assets/images/features-1.jpg"
-                             alt="Улица Седоны: двухэтажное кафе с верандой, американские флаги и цветущие кусты на фоне красных скал">
+                             alt="Улица Седоны: двухэтажное кафе с верандой, американские флаги и цветущие кусты на фоне красных скал" width="800" height="385">
                     </div>
                 </div>
                 <div class="features__grid">
@@ -111,7 +111,7 @@
                     </div>
                     <div class="features-item">
                         <img src="assets/images/features-2.jpg"
-                             alt="Мост Дьявола: природная арка из красного песчаника над долиной с хвойным лесом">
+                             alt="Мост Дьявола: природная арка из красного песчаника над долиной с хвойным лесом" width="800" height="385">
                     </div>
                 </div>
             </div>
@@ -189,13 +189,98 @@
             <a href="tel:+78128121212" class="phone">+7 (812) 812-12-12</a>
         </div>
 
-        <a href="/" class="logo-htmlAcademy">
+        <a href="https://htmlacademy.ru/" target="_blank" class="logo-htmlAcademy">
             <img src="assets/images/HTMLAcademy.png" alt="HTML Academy — сайт разработчика">
         </a>
     </footer>
 </div>
 
+<!-- чтобы включить модально окно нужно добавить класс 'open' к 'modal-overlay' -->
+<div class="modal-overlay">
+    <label class="modal-overlay__backdrop" for="search-modal" aria-label="Закрыть окно поиска"></label>
 
+    <section class="modal">
+        <h2 class="modal__title">Поиск гостиницы в Седоне</h2>
+        <button class="modal__close" type="button" for="search-modal" aria-label="Закрыть окно поиска">
+            <svg class="icon">
+                <use xlink:href="#close"></use>
+            </svg>
+        </button>
+
+        <form class="search-form" action="#" method="post">
+            <div class="search-form__row">
+                <label class="search-form__label" for="check-in">Дата Заезда:</label>
+                <div class="search-form__field">
+                    <input class="search-form__input" type="text" id="check-in" name="check-in" value="27 апреля 2020">
+                    <svg class="icon search-form__icon">
+                        <use xlink:href="#calendar"></use>
+                    </svg>
+                </div>
+                <p class="search-form__message search-form__message--error">Мы не можем отправить вас в прошлое.</p>
+            </div>
+
+            <div class="search-form__row">
+                <label class="search-form__label" for="check-out">Дата Выезда:</label>
+                <div class="search-form__field">
+                    <input class="search-form__input" type="text" id="check-out" name="check-out" value="1 сентября 2023">
+                    <svg class="icon search-form__icon">
+                        <use xlink:href="#calendar"></use>
+                    </svg>
+                </div>
+                <p class="search-form__message">На эти даты есть свободные номера. Пока есть.</p>
+            </div>
+
+            <div class="search-form__row search-form__row--people">
+                <div class="search-form__people">
+                    <label class="search-form__label" for="adults">Взрослые:</label>
+                    <div class="counter">
+                        <button class="counter__button" type="button" aria-label="Меньше взрослых">
+                            <svg class="icon">
+                                <use xlink:href="#minus"></use>
+                            </svg>
+                        </button>
+                        <input class="counter__input" type="number" id="adults" name="adults" value="2" min="1">
+                        <button class="counter__button" type="button" aria-label="Больше взрослых">
+                            <svg class="icon">
+                                <use xlink:href="#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="search-form__people">
+                    <div class="search-form__people-heading">
+                        <label class="search-form__label" for="children">Дети:</label>
+                        <div class="tooltip">
+                            <button class="tooltip__toggle" type="button" aria-label="Подсказка о возрасте детей">
+                                <svg class="icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </button>
+                            <p class="tooltip__text">Укажите количество детей, которые будут с вами, возраст которых от
+                                6 до 18 лет. Дети до 6 лет размещаются бесплатно.</p>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <button class="counter__button" type="button" aria-label="Меньше детей">
+                            <svg class="icon">
+                                <use xlink:href="#minus"></use>
+                            </svg>
+                        </button>
+                        <input class="counter__input" type="number" id="children" name="children" value="2" min="0">
+                        <button class="counter__button" type="button" aria-label="Больше детей">
+                            <svg class="icon">
+                                <use xlink:href="#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="button search-form__submit" type="submit">Найти</button>
+        </form>
+    </section>
+</div>
 
 
 <svg width="0" height="0" class="hidden">
@@ -244,6 +329,19 @@
     </symbol>
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 10" id="arrow-right">
         <path d="M6.11167 4.4375L1.36167 0.1875C1.11167 -0.0625 0.611674 -0.0625 0.236674 0.1875C-0.138326 0.4375 -0.0133261 0.9375 0.236674 1.1875L4.36167 4.9375L0.361674 8.6875C0.111674 8.9375 0.111674 9.4375 0.361674 9.6875C0.361674 9.8125 0.736674 9.9375 0.861674 9.9375C0.986674 9.9375 1.23667 9.8125 1.36167 9.6875L6.11167 5.4375C6.48667 5.1875 6.48667 4.6875 6.11167 4.4375Z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" id="close">
+        <path d="M14 1.4L12.6 0L7 5.6L1.4 0L0 1.4L5.6 7L0 12.6L1.4 14L7 8.4L12.6 14L14 12.6L8.4 7L14 1.4Z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" id="plus">
+        <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 2" id="minus">
+        <path d="M14 0H0V2H14V0Z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 12" id="info">
+        <path d="M2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0Z"></path>
+        <path d="M3.5 5.5H0.5V12H3.5V5.5Z"></path>
     </symbol>
 </svg>
 

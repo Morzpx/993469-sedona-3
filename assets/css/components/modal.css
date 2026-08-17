@@ -239,7 +239,10 @@
     width: 110px;
     background: #f2f2f2;
     border-radius: 4px;
-
+    transition: 200ms;
+    &:is(:hover) {
+        background: #e6e6e6;
+    }
     & .counter__button {
         display: flex;
         justify-content: center;
@@ -261,6 +264,9 @@
 
         &:is(:hover) .icon {
             fill: #000000;
+        }
+        &:is(:active) .icon {
+            fill: #ddd;
         }
 
         &:is(:focus-visible) {
