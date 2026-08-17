@@ -36,8 +36,11 @@
             color: #000;
             text-decoration: none;
             position: relative;
-            &:is(:active) {
-                color: #0000007d;
+            transition: 200ms;
+            &:is(:hover) {
+                color: #00000091;
+            } &:is(:active) {
+                color: #ddd;
             }
             &:is(:focus-visible) {
                 color: #8098a7;

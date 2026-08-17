@@ -80,6 +80,8 @@
                     color: #fff;
                     width: 100%;
                     text-align: center;
+                    align-items: center;
+                    padding: 20px 0;
                     & .title {
                         text-transform: uppercase;
                         max-width: 172px;
@@ -108,7 +110,6 @@
             & .features__grid-item {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 gap: 30px;
                 padding: 112px 85px;
                 background: #F0F5F9;
